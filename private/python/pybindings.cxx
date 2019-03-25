@@ -849,8 +849,10 @@ PYBIND11_MODULE(pyPROPOSAL, m)
         .def(py::init<const ParticleDef&, const std::vector<Sector::Definition>&, const Geometry&>(),
             py::arg("particle_def"), py::arg("sector_defs"), py::arg("detector"))
         .def(py::init<const ParticleDef&, const std::string&>(), py::arg("particle_def"), py::arg("config_file"))
+        .def(py::init<const Propagator&>(), py::arg("Propagator"))
         .def("propagate", &Propagator::Propagate, py::arg("max_distance_cm") = 1e20, py::return_value_policy::reference)
         .def_property_readonly("particle", &Propagator::GetParticle, "Get the internal created particle to modify its properties")
+        .def_property_readonly("sector", &Propagator::GetCurrentSector, "Get the current sector")
         .def_property_readonly("detector", &Propagator::GetDetector, "Get the detector geometry");
 
     // --------------------------------------------------------------------- //

@@ -791,7 +791,7 @@ Geometry* Propagator::ParseGeometryConifg(const boost::property_tree::ptree& pt)
     std::string origin_str       = "origin";
     std::string outer_radius_str = "outer_radius";
     std::string inner_radius_str = "inner_radius";
-    std::string lenght_str       = "lenght";
+    std::string lenght_str       = "length";
     std::string width_str        = "width";
     std::string height_str       = "height";
 
